@@ -37,6 +37,7 @@ Yes, Haskell has a package called Convertible that provides typeclasses and inst
 -- Question 5
 -- Can you also define in Haskell list of lists? Did we showed any example of that? How would you access the inner
 -- most elements?
+
 Yes, you can define a list of lists in Haskell. We did not show an example of that in the lecture. To access the innermost elements, you would use the !! operator to access the element at the specified index in the list.
 
 
