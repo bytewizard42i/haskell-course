@@ -99,6 +99,33 @@ calculateSumOfSqrRts x y =
     in
         sumOfSquareRoots --holy shit, it works!
 
+{- My try at this:
+calcSOSR :: Float -> Float -> (String, Float)
+calcSOSR x y = show (product) ++ " is the product of " ++ show (x) ++ " and " ++ show (y) ++ show (quotient) ++ " is the quotient of " ++ show (x) ++ " and " ++ show (y) ++ (sumOfSquareRoots) 
+    where
+        product = x * y
+        quotient = x / y
+        squareRootOfProduct = sqrt product
+        squareRootOfQuotient = sqrt quotient
+        sumOfSquareRoots = squareRootOfProduct + squareRootOfQuotient 
+-}
+
+-- GPT4o changes:
+
+calcSOSR :: Float -> Float -> (String, Float)
+calcSOSR x y = 
+    ( show product ++ " is the product of " ++ show x ++ " and " ++ show y ++ ". " ++
+      show quotient ++ " is the quotient of " ++ show x ++ " and " ++ show y ++ ". " ++
+      show sumOfSquareRoots ++ " is the sum of the square roots of the product and the quotient.",
+      sumOfSquareRoots)
+  where
+    product = x * y
+    quotient = x / y
+    squareRootOfProduct = sqrt product
+    squareRootOfQuotient = sqrt quotient
+    sumOfSquareRoots = squareRootOfProduct + squareRootOfQuotient
+
+    
 {- 
 I was trying to incorporate the following code which I thought would be cool and Python(y), as I really like showing the outputs along the way, but sadly I couldnt get it to work:
         show (product) ++ " is the product of " ++ show (x) ++ " and " ++ show (y)
