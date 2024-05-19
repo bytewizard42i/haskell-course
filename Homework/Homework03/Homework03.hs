@@ -91,12 +91,17 @@ takes two numbers x, y and calculates the sum of the square roots of the product
 calculateSumOfSqrRts :: Float -> Float -> Float
 calculateSumOfSqrRts x y = 
     let
-        product = x * y
-        quotient = x / y
-    where
+        product = x * y 
+        quotient = x / y 
         squareRootOfProduct = sqrt product
         squareRootOfQuotient = sqrt quotient
-            let
-                sumOfSquareRoots = squareRootOfProduct + squareRootOfQuotient
-            in
-                sumOfSquareRoots 
+        sumOfSquareRoots = squareRootOfProduct + squareRootOfQuotient
+    in
+        sumOfSquareRoots --holy shit, it works!
+
+{- 
+I was trying to incorporate the following code which I thought would be cool and Python(y), as I really like showing the outputs along the way, but sadly I couldnt get it to work:
+        show (product) ++ " is the product of " ++ show (x) ++ " and " ++ show (y)
+
+        show (quotient) ++ " is the quotient of " ++ show (x) ++ " and " ++ show (y)
+-}
