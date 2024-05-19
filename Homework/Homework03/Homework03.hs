@@ -84,4 +84,19 @@ quotientIf x y =
 -- of those numbers. Write the function such that you use a where block inside a let expression and a
 -- let expression inside a where block. 
 
+{- 
+takes two numbers x, y and calculates the sum of the square roots of the product and quotient of x and y. ?  sqr root + sqr root 
+-}
 
+calculateSumOfSqrRts :: Float -> Float -> Float
+calculateSumOfSqrRts x y = 
+    let
+        product = x * y
+        quotient = x / y
+    where
+        squareRootOfProduct = sqrt product
+        squareRootOfQuotient = sqrt quotient
+            let
+                sumOfSquareRoots = squareRootOfProduct + squareRootOfQuotient
+            in
+                sumOfSquareRoots 
