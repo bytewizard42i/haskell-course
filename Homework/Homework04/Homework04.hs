@@ -5,6 +5,38 @@
 nested :: [([Int], [Int])]
 nested = [([1,2],[3,4]), ([5,6],[7,8])]
 
+-- my answer:
+{-
+findFour :: [([Int], [Int])] -> Int
+findFour (x,_) = If x == 4 Then " There is a 4 in the first position"
+findFour (_,y) = If y == 4 Then " There is a 4 in the second position" 
+findFour [] = error "No 4 found"
+-}
+
+-- Gpt4o answer:
+{-
+findFour :: [([Int], [Int])] -> Int
+findFour [] = error "No 4 found"
+findFour ((xs, ys):rest) =
+    case (xs, ys) of
+        ([], []) -> findFour rest
+        (4:_, _) -> 4
+        (_, 4:_) -> 4
+        (_:xs', _:ys') -> findFour ((xs', ys'):rest)
+        (xs', ys') -> findFour rest
+-}
+-- Gpt4o answer 2:
+
+findFour :: [([Int], [Int])] -> Int
+findFour [] = error "No 4 found"
+findFour ((xs, ys):rest)
+    | 4 `elem` xs = 4
+    | 4 `elem` ys = 4
+    | otherwise = findFour rest
+
+
+
+
 -- Question 2
 -- Write a function that takes a list of elements of any type and, if the list has 3 or more elements, it
 -- removes them. Else, it does nothing. Do it two times, one with multiple function definitions and one with
